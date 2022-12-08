@@ -1130,9 +1130,9 @@
                                 </#list>
                                 <#if rate_traslados_locales gt 0>
                                     <#assign total_trasla = monto_traslados_locales + totalivaGBL?number>
-                                    <td align="right" colspan="1" style="font-size: 7pt;">${nsformat_rate(total_trasla,"MXN")?keep_after("$")}</td>
+                                    <td align="right" colspan="1" style="font-size: 7pt; border-color: #e3e3e3;border-left: 1px;">${nsformat_rate(total_trasla,"MXN")?keep_after("$")}</td>
                                     <#else>
-                                        <td align="right" colspan="1" style="font-size: 7pt; ">${nsformat_rate(totalivaGBL,"MXN")?keep_after("$")}</td>
+                                        <td align="right" colspan="1" style="font-size: 7pt; border-color: #e3e3e3;border-left: 1px;">${nsformat_rate(totalivaGBL,"MXN")?keep_after("$")}</td>
                                 </#if>
                         </#if>
                     </tr>
@@ -1143,7 +1143,7 @@
                             <#list dataXML.Impuestos.Traslados.Traslado as traslados_lista>
                                 <#assign iva_ratenum = traslados_lista.atributos.TasaOCuota?number * 100>
                                     <tr>
-                                        <td colspan="2" style="font-size: 5pt;">
+                                        <td colspan="2" style="font-size: 5pt; border-color: #e3e3e3;border-left: 1px;">
                                             ${iva_ratenum}%: ${traslados_lista.atributos.Importe?number?string[",##0.00"]}<br/>
                                         </td>
                                     </tr>
@@ -1151,7 +1151,7 @@
                             <#else>
                                 <#assign iva_ratenum = dataXML.Impuestos.Traslados.Traslado.atributos.TasaOCuota?number * 100>
                                 <tr>
-                                    <td colspan="2" style="font-size: 5pt;">
+                                    <td colspan="2" style="font-size: 5pt; border-color: #e3e3e3;border-left: 1px;">
                                         ${iva_ratenum}%: ${dataXML.Impuestos.Traslados.Traslado.atributos.Importe?number?string[",##0.00"]}<br/>
                                     </td>
                                 </tr>
@@ -1199,14 +1199,16 @@
                             </#list>
                     </#if>
 
-
-
-
                     <tr>
                         <td colspan="1" style="font-size: 7pt;  border-color: #e3e3e3;border-left: 1px;"><b>Retenciones ISN</b></td>
                         <#if dataXML?has_content>
-                            <td align="right" colspan="1"
-                                style="font-size: 7pt;">${dataXML.Impuestos.atributos.TotalImpuestosRetenidos?number?string[",##0.00"]}</td>
+                            <#if dataXML.Impuestos.atributos.TotalImpuestosRetenidos?has_content>
+                                <td align="right" colspan="1" style="font-size: 7pt;">${dataXML.Impuestos.atributos.TotalImpuestosRetenidos?number?string[",##0.00"]}</td>
+                            <#elseif dataXML.Complemento.ImpuestosLocales.RetencionesLocales?has_content>
+                                <td align="right" colspan="1" style="font-size: 7pt;">${dataXML.Complemento.ImpuestosLocales.atributos.TotaldeRetenciones?number?string[",##0.00"]}</td>
+                            <#else>
+                                <td align="right" colspan="1" style="font-size: 7pt;">0.00</td>
+                            </#if>
                         <#else>
                             <#if rate_traslados_locales lt 0>
                                 <#if monto_retenciones_locales_timbrado?has_content>
