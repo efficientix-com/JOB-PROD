@@ -360,6 +360,108 @@ td.cuerpotablainfo{
         <tr>
             <td font-size="8pt"><b>Domicilio fiscal:</b> ${record.customer.address?upper_case}</td>
         </tr>
+        <#if dataXML.atributos.Version == "4.0">
+            <#if record.entity.custentity_mx_sat_industry_type?has_content>
+                <#if record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "601">
+                    <#assign reg_fiscal = "601 - General de Ley Personas Morales">
+                    <tr>
+                        <td font-size="8pt"><b>Regimen Fiscal:</b> ${reg_fiscal?upper_case}</td>
+                    </tr>
+                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "603">
+                    <#assign reg_fiscal = "603 - Personas Morales con Fines no Lucrativos">
+                    <tr>
+                        <td font-size="8pt"><b>Regimen Fiscal:</b> ${reg_fiscal?upper_case}</td>
+                    </tr>
+                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "605">
+                    <#assign reg_fiscal = "605 - Sueldos y Salarios e Ingresos Asimilados a Salarios">
+                    <tr>
+                        <td font-size="8pt"><b>Regimen Fiscal:</b> ${reg_fiscal?upper_case}</td>
+                    </tr>
+                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "606">
+                    <#assign reg_fiscal = "606 - Arrendamiento">
+                    <tr>
+                        <td font-size="8pt"><b>Regimen Fiscal:</b> ${reg_fiscal?upper_case}</td>
+                    </tr>
+                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "607">
+                    <#assign reg_fiscal = "607 - Régimen de Enajenación o Adquisición de Bienes">
+                    <tr>
+                        <td font-size="8pt"><b>Regimen Fiscal:</b> ${reg_fiscal?upper_case}</td>
+                    </tr>
+                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "608">
+                    <#assign reg_fiscal = "608 - Demás ingresos">
+                    <tr>
+                        <td font-size="8pt"><b>Regimen Fiscal:</b> ${reg_fiscal?upper_case}</td>
+                    </tr>
+                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "610">
+                    <#assign reg_fiscal = "610 - Residentes en el Extranjero sin Establecimiento Permanente en México">
+                    <tr>
+                        <td font-size="8pt"><b>Regimen Fiscal:</b> ${reg_fiscal?upper_case}</td>
+                    </tr>
+                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "611">
+                    <#assign reg_fiscal = "611 - Ingresos por Dividendos (socios y accionistas)">
+                    <tr>
+                        <td font-size="8pt"><b>Regimen Fiscal:</b> ${reg_fiscal?upper_case}</td>
+                    </tr>
+                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "612">
+                    <#assign reg_fiscal = "612 - Personas Físicas con Actividades Empresariales y Profesionales">
+                    <tr>
+                        <td font-size="8pt"><b>Regimen Fiscal:</b> ${reg_fiscal?upper_case}</td>
+                    </tr>
+                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "614">
+                    <#assign reg_fiscal = "614 - Ingresos por intereses">
+                    <tr>
+                        <td font-size="8pt"><b>Regimen Fiscal:</b> ${reg_fiscal?upper_case}</td>
+                    </tr>
+                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "615">
+                    <#assign reg_fiscal = "615 - Régimen de los ingresos por obtención de premios">
+                    <tr>
+                        <td font-size="8pt"><b>Regimen Fiscal:</b> ${reg_fiscal?upper_case}</td>
+                    </tr>
+                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "616">
+                    <#assign reg_fiscal = "616 - Sin obligaciones fiscales">
+                    <tr>
+                        <td font-size="8pt"><b>Regimen Fiscal:</b> ${reg_fiscal?upper_case}</td>
+                    </tr>
+                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "620">
+                    <#assign reg_fiscal = "620 - Sociedades Cooperativas de Producción que Optan por Diferir sus Ingresos">
+                    <tr>
+                        <td font-size="8pt"><b>Regimen Fiscal:</b> ${reg_fiscal?upper_case}</td>
+                    </tr>
+                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "621">
+                    <#assign reg_fiscal = "621 - Incorporación Fiscal">
+                    <tr>
+                        <td font-size="8pt"><b>Regimen Fiscal:</b> ${reg_fiscal?upper_case}</td>
+                    </tr>
+                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "622">
+                    <#assign reg_fiscal = "622 - Actividades Agrícolas, Ganaderas, Silvícolas Y Pesqueras">
+                    <tr>
+                        <td font-size="8pt"><b>Regimen Fiscal:</b> ${reg_fiscal?upper_case}</td>
+                    </tr>
+                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "623">
+                    <#assign reg_fiscal = "623 - Opcional para Grupos de Sociedades">
+                    <tr>
+                        <td font-size="8pt"><b>Regimen Fiscal:</b> ${reg_fiscal?upper_case}</td>
+                    </tr>
+                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "624">
+                    <#assign reg_fiscal = "624 - Coordinados">
+                    <tr>
+                        <td font-size="8pt"><b>Regimen Fiscal:</b> ${reg_fiscal?upper_case}</td>
+                    </tr>
+                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "625">
+                    <#assign reg_fiscal = "625 - Régimen de las Actividades Empresariales con ingresos a través de Plataformas Tecnológicas">
+                    <tr>
+                        <td font-size="8pt"><b>Regimen Fiscal:</b> ${reg_fiscal?upper_case}</td>
+                    </tr>
+                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "626">
+                    <#assign reg_fiscal = "626 - Régimen Simplificado de Confianza">
+                    <tr>
+                        <td font-size="8pt"><b>Regimen Fiscal:</b> ${reg_fiscal?upper_case}</td>
+                    </tr>
+                <#else>
+                    <br />Regimen Fiscal:${record.entity.custentity_mx_sat_industry_type?keep_before(" ")?upper_case}
+                </#if>
+            </#if>
+        </#if>
     </#if>
     </table>
 </td>
@@ -382,7 +484,11 @@ td.cuerpotablainfo{
         <td font-size="8pt">P Pago</td>
     </tr><tr>
         <td font-size="8pt"><b>Versión Comprobante</b></td>
-        <td font-size="8pt">3.3</td>
+        <#if dataXML.atributos.Version == "4.0">
+            <td font-size="8pt">4.0</td>
+        <#else>
+            <td font-size="8pt">3.3</td>
+        </#if>
     </tr><tr>
         <td font-size="8pt"><b>Moneda</b></td>
         <td font-size="8pt">XXX</td>
@@ -394,24 +500,31 @@ td.cuerpotablainfo{
         <td font-size="8pt">${record.custbody_mx_cfdi_issuer_serial}</td>
     </#if>
 
-        </tr><tr>
-        <#assign datearray = record.custbody_mx_cfdi_certify_timestamp?split("T")>
-        <td font-size="8pt"><b>F. Certificación</b></td>
-        <td font-size="8pt">
-            <#if record.custbody_mx_cfdi_certify_timestamp?has_content>
-            <#if datearray?size == 2 >
-            <#assign dayarray = datearray[0]?split("-")>
-            ${dayarray[2]}/${dayarray[1]}/${dayarray[0]} ${datearray[1]}
-            <#else>
-            ${record.custbody_mx_cfdi_certify_timestamp}
+        </tr>
+        <tr>
+            <#assign datearray = record.custbody_mx_cfdi_certify_timestamp?split("T")>
+            <td font-size="8pt"><b>F. Certificación</b></td>
+            <td font-size="8pt">
+                <#if record.custbody_mx_cfdi_certify_timestamp?has_content>
+                    <#if datearray?size == 2 >
+                        <#assign dayarray = datearray[0]?split("-")>
+                        ${dayarray[2]}/${dayarray[1]}/${dayarray[0]} ${datearray[1]}
+                    <#else>
+                        ${record.custbody_mx_cfdi_certify_timestamp}
+                    </#if>
+                <#else>
+                    <#if certData?has_content>
+                        ${certData.custbody_mx_cfdi_certify_timestamp}
+                    </#if>
+                </#if>
+            </td>
+        </tr>
+        <#if dataXML.atributos.Version == "4.0">
+            <tr>
+                <td font-size="8pt"><b>Tipo de exportación:</b></td>
+                <td font-size="8pt">01 - No aplica</td>
+            </tr>
         </#if>
-        <#else>
-        <#if certData?has_content>
-        ${certData.custbody_mx_cfdi_certify_timestamp}
-    </#if>
-    </#if>
-</td>
-</tr>
 
 </table>
 </td>
