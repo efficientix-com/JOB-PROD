@@ -1667,8 +1667,10 @@
             <#else>
                 <td colspan="2" style="font-size: 7pt; padding: 2px;"></td>
             </#if>
-            <td colspan="1" style="font-size: 7pt; padding: 2px;"><b>Tipo de exportación: </b></td>
-            <td colspan="2" style="font-size: 7pt; padding: 2px;">${record.custbody_mx_cfdi_sat_export_type}</td>
+            <#if dataXML.atributos.Version == "4.0">
+                <td colspan="1" style="font-size: 7pt; padding: 2px;"><b>Tipo de exportación: </b></td>
+                <td colspan="2" style="font-size: 7pt; padding: 2px;">${record.custbody_mx_cfdi_sat_export_type}</td>
+            </#if>
         </tr>
         <tr>
             <#if infoEmpresa.custrecord_mx_sat_industry_type?has_content>
