@@ -78,11 +78,15 @@
                     <tr height="90px">
                         <td colspan="6" align="left" style="font-size: 12px">
                                 ${record.subsidiary} <br />
-                                <#if certData?has_content>
-                                    RFC: ${custom.companyInfo.rfc}
-
+                                <#if dataXML.Emisor.atributos.Rfc?has_content>
+                                    RFC: ${dataXML.Emisor.atributos.Rfc}
                                 <#else>
-                                    RFC: ${subsidiary.federalidnumber}
+                                    <#if certData?has_content>
+                                        RFC: ${custom.companyInfo.rfc}
+
+                                    <#else>
+                                        RFC: ${subsidiary.federalidnumber}
+                                    </#if>
                                 </#if>
                         </td>
                         <td colspan="1">&nbsp;</td>
